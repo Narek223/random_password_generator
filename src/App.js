@@ -38,7 +38,7 @@ export default function App() {
 passwordd.push(pa)
       setst(pa);
     }
-    setst(passwordd.join(""));
+    setst(passwordd.join("").padStart(35," "));
   };
   const lowercase = (lov) => {      
     low.current.checked
@@ -50,18 +50,13 @@ passwordd.push(pa)
       ? setpass(upper.concat(pass))
       : setpass(pass.replace(/[A-Z]/g, ''));
   };
-const cop=()=>{
-  if(st===""){
-    setst(" ")
-  }
-}
   return (
     <div className="conteiner">
       <div className="rand">
       <div className="copy">
         <input type='text' value={st} className='text'/>
         <CopyToClipboard text={st}>
-        <button className="btn" onClick={cop}>COPY</button>
+        <button className="btn">COPY</button>
         </CopyToClipboard>
         </div>
         <div className="settings">
