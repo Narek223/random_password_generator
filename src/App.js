@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react';
 import './App.css';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
  
-
 export default function App() {
   let a = 'abcdefghijklmnopqrstuvwxyz';
   let sm = '@#$%&()<>{}-';
@@ -22,14 +21,10 @@ export default function App() {
     setreng(l);
   };
   const num = () => {
-    p.current.checked
-      ? setpass(number.concat(pass))
-      : setpass(pass.replace(/[0-9]/g, ''));
+    p.current.checked? setpass(number.concat(pass)): setpass(pass.replace(/[0-9]/g, ''));
   };
   const symbols = () => {
-    sym.current.checked
-      ? setpass(sm.concat(pass))
-      : setpass(pass.replace(/[!@#$%&()<>{}-]/g, ''));
+    sym.current.checked? setpass(sm.concat(pass)): setpass(pass.replace(/[!@#$%&()<>{}-]/g, ''));
   };
   const submit = () => {
     let passwordd = [];
@@ -38,17 +33,13 @@ export default function App() {
 passwordd.push(pa)
       setst(pa);
     }
-    setst(passwordd.join("").padStart(35," "));
+    setst(passwordd.join("").padStart(38," "));
   };
   const lowercase = (lov) => {      
-    low.current.checked
-      ? setpass(a.concat(pass))
-      : setpass(pass.replace(/[a-z]/g, ''));
+    low.current.checked? setpass(a.concat(pass)): setpass(pass.replace(/[a-z]/g, ''));
   };
   const upcas = () => {
-    upperc.current.checked
-      ? setpass(upper.concat(pass))
-      : setpass(pass.replace(/[A-Z]/g, ''));
+    upperc.current.checked? setpass(upper.concat(pass)): setpass(pass.replace(/[A-Z]/g, ''));
   };
   return (
     <div className="conteiner">
@@ -69,8 +60,7 @@ passwordd.push(pa)
             max="12"
             value={rang}
             onChange={len}
-            ref={ref}
-          />
+            ref={ref}/>
         </div>
         <div className="settings">
           <label htmlFor="chack">Numbers (1,2,3)</label>
@@ -91,8 +81,7 @@ passwordd.push(pa)
             id="up"
             name="up"
             onClick={upcas}
-            ref={upperc}
-          />
+            ref={upperc}/>
         </div>
         <button onClick={submit}>SUBMIT</button>
       </div>
