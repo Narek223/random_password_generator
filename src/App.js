@@ -1,17 +1,14 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef} from 'react';
 import './App.css';
 import {CopyToClipboard} from 'react-copy-to-clipboard';
  
 export default function App() {
-  let a = 'abcdefghijklmnopqrstuvwxyz';
-  let sm = '@#$%&()<>{}-';
-  let number = '123456789';
-  let upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  let [a,sm,number,upper] = ['abcdefghijklmnopqrstuvwxyz','@#$%&-','123456789','ABCDEFGHIJKLMNOPQRSTUVWXYZ'  ]
   const [st, setst] = useState();
   const [pass, setpass] = useState(" ");
   const [rang, setreng] = useState(6);
   const ref = useRef();
-  const p = useRef();
+  let  p = useRef();
   let sym = useRef();
   let low = useRef(); 
   let upperc = useRef();
@@ -24,7 +21,7 @@ export default function App() {
     p.current.checked? setpass(number.concat(pass)): setpass(pass.replace(/[0-9]/g, ''));
   };
   const symbols = () => {
-    sym.current.checked? setpass(sm.concat(pass)): setpass(pass.replace(/[!@#$%&()<>{}-]/g, ''));
+    sym.current.checked? setpass(sm.concat(pass)): setpass(pass.replace(/[!@#$%&-]/g, ''));
   };
   const submit = () => {
     let passwordd = [];
@@ -33,7 +30,7 @@ export default function App() {
 passwordd.push(pa)
       setst(pa);
     }
-    setst(passwordd.join("").padStart(38," "));
+    setst(passwordd.join(""));
   };
   const lowercase = (lov) => {      
     low.current.checked? setpass(a.concat(pass)): setpass(pass.replace(/[a-z]/g, ''));
@@ -41,13 +38,16 @@ passwordd.push(pa)
   const upcas = () => {
     upperc.current.checked? setpass(upper.concat(pass)): setpass(pass.replace(/[A-Z]/g, ''));
   };
+  const copy=()=>{
+alert(`password: ${st}`)
+  }
   return (
     <div className="conteiner">
       <div className="rand">
       <div className="copy">
         <input type='text' value={st} className='text'/>
         <CopyToClipboard text={st}>
-        <button className="btn">COPY</button>
+        <button className="btn" onClick={copy}>COPY</button>
         </CopyToClipboard>
         </div>
         <div className="settings">
