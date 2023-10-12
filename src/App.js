@@ -12,7 +12,7 @@ export default function App() {
   let sym = useRef();
   let low = useRef(); 
   let upperc = useRef();
-
+  
   const len = () => {
     let l = ref.current.value;
     setreng(l);
@@ -39,13 +39,14 @@ passwordd.push(pa)
     upperc.current.checked? setpass(upper.concat(pass)): setpass(pass.replace(/[A-Z]/g, ''));
   };
   const copy=()=>{
-alert(`password: ${st}`)
+setst("")
   }
   return (
+  
     <div className="conteiner">
       <div className="rand">
       <div className="copy">
-        <input type='text' value={st} className='text'/>
+        <input type='text' value={st} className='text' disabled='true' placeholder='Your password'/>
         <CopyToClipboard text={st}>
         <button className="btn" onClick={copy}>COPY</button>
         </CopyToClipboard>
@@ -56,8 +57,8 @@ alert(`password: ${st}`)
             type="range"
             id="vol"
             name="vol"
-            min="1"
-            max="12"
+            min="6"
+            max="16"
             value={rang}
             onChange={len}
             ref={ref}/>
@@ -67,7 +68,7 @@ alert(`password: ${st}`)
           <input type="checkbox" id="check" onClick={num} ref={p} />
         </div>
         <div className="settings">
-          <label htmlFor="cha">Symbols (_,$,%,^)</label>
+          <label htmlFor="cha">Symbols ($,%,^)</label>
           <input type="checkbox" id="che" onClick={symbols} ref={sym} />
         </div>
         <div className="settings">
@@ -83,8 +84,11 @@ alert(`password: ${st}`)
             onClick={upcas}
             ref={upperc}/>
         </div>
-        <button onClick={submit}>SUBMIT</button>
+        <button onClick={submit} className='btn2'>Generate Password</button>
       </div>
+    
+      
+
     </div>
   );
 }

@@ -1,110 +1,144 @@
 *{
- font-family:Arial, Helvetica, sans-serif;
-}
-body{
-  background-color:aliceblue
- } 
-p{
-  text-align: center;
-}
- #check{
-   color: rgb(255, 255, 255); 
+  font-family:Arial, Helvetica, sans-serif;
  }
- .p{
-   width: 80%;
- }
- label{
-   color: white;
- }
- .text{
-width: 70%;
- }
- .copy{
- display: flex;
- justify-content:space-evenly;
- align-items: baseline;
- }
- .btn{
- width: 20%;
- border-radius:5%;
- cursor: pointer;
- }
- .conteiner{
- display: flex;
- justify-content: center;
- align-content:flex-start;
- padding: 2rem;
- }
- .rand p{
-  padding:10px 15px 10px 15px;
-  background-color: rgb(250, 250, 250);
- }
- .read{
+ body{
+   background-color:rgb(0, 128, 128);
+  } 
+ p{
    text-align: center;
  }
- .rand{
-   width: 23%;
-   background-color:rgb(32, 32, 34);
-   border-radius: 5%;
-   overflow: hidden;
-display: flex;
-flex-direction: column;
-box-shadow: 10px 15px 26px 10px  black;
- }
- form{
-   display: flex;
-text-align: center;
-padding:15px 5px 15px 5px; 
-flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
- }
- .rand button{
-   background-color: rgb(0, 0, 0);
-   color: white;
-   border: none;
-   padding: 10px;
-   cursor: pointer;
-   border-radius:5%;
- }
+  #check{
+    color: rgb(255, 255, 255); 
 
- .rand button:active{
-transform: scale(1.1);
-opacity: 0.5;
- }
- label,input{
-   margin:12px;
- }
- form button{
-   width: 98%;
- }
- .settings{
-  justify-content: space-between;
+  }
+  .p{
+    width: 80%;
+  }
+  label{
+    color: white;
+  }
+  input[type=text]{
+    height: 25px;
+    border: none;
+border-radius: 5px;
+width: 13vw;
+  }
+.btn2{
+  border-radius:10px;
+  font-size: 1.1em;
+  font-weight: 700;
+  width: 88%;
+}
+  .text{
+ width: 70%;
+ background-color: rgb(240, 241, 245);
+  }
+  .copy{
+  display: flex;
+  justify-content:space-evenly;
   align-items: baseline;
-  flex-wrap: wrap;
-border-radius:3%;
-display: flex;
-color: #fff;
-margin-bottom: 5px;
-border:2px solid rgb(102, 109, 124);
+  }
+  .btn{
+  width: 18%;
+  border-radius:10px;
+  cursor: pointer;
+  }
+  .conteiner{
+  display: flex;
+  justify-content: center;
+  align-content:flex-start;
+  padding: 2rem;
+  }
+  .rand p{
+   padding:10px 15px 10px 15px;
+   background-color: rgb(250, 250, 250);
+  }
+  .read{
+    text-align: center;
+  }
+  .rand{
+  align-items: center;
+    width: 20%;
+    padding: 8px;
+    background-color: rgb(10,14,49);
+    border-radius: 5%;
+    overflow: hidden;
+ display: flex;
+ flex-direction: column;
+ box-shadow: 10px 15px 26px 10px  rgb(37, 33, 33);
+  }
+  form{
+
+    display: flex;
+ text-align: center;
+ padding:15px 5px 15px 5px; 
+ flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+  }
+  .rand button{
+    background-color: rgba(115,86,177,0.3);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+
+  }
+  .rand button:nth-last-child(1){
+ 
+  }
+ 
+  .rand button:active{
+ transform: scale(1.1);
+ opacity: 0.5;
+ border-radius: 15px;
+  }
+  label,input{
+
+    margin:15px;
+  }
+  form button{
+    width: 98%;
+  }
+  .settings{
+   justify-content: space-between;
+   background-color: rgb(29,33,65);
+   align-items: baseline;
+   flex-wrap: wrap;
+ border-radius:15px;
+ width: 90%;
+ display: flex;
+ color: #fff;
+ margin-bottom: 10px;
+ border:2px solid rgb(128,0,128);
+  }
+  .settings input,label{
+    background-color: rgb(29,33,65);
+  }
+
+  @media(max-width:825px){
+   .rand{
+      width: 60%;
+      background-color:rgb(32, 32, 34);
+      border-radius: 5%;
+   display: flex;
+   flex-direction: column;
+       flex-wrap: nowrap;
+   }
  }
- @media(max-width:825px){
-  .rand{
-     width: 60%;
-     background-color:rgb(32, 32, 34);
-     border-radius: 5%;
-  display: flex;
-  flex-direction: column;
-      flex-wrap: nowrap;
+ @media(max-width:550px){
+  input[type=text]{
+    height: 25px;
+    border: none;
+border-radius: 5px;
+width: 50vw;
   }
-}
-@media(max-width:550px){
-  .rand{
-     width: 90%;
-     background-color:rgb(32, 32, 34);
-     border-radius: 5%;
-  display: flex;
-  flex-direction: column;
-      flex-wrap: nowrap;
-  }
-}
+   .rand{
+      width: 100%;
+      background-color:rgb(32, 32, 34);
+      border-radius: 5%;
+   display: flex;
+   flex-direction: column;
+       flex-wrap: nowrap;
+   }
+ }
